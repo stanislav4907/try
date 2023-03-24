@@ -21,6 +21,8 @@ resource "aws_security_group" "web" {
     Name = "Web Security Group"
   }
 
+}
+
 resource "aws_security_group" "db" {
   name        = "DB security group"
   description = "Allow 3306 inbound traffic"
@@ -30,7 +32,7 @@ resource "aws_security_group" "db" {
     from_port   = 3306
     to_port     = 3306
     protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
+    cidr_blocks = [aws_subnet.db_subnet.cidr_block]
 
   }
   egress {
