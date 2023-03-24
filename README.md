@@ -1,16 +1,19 @@
 # terraform-wordpress
 
+
 Project covers Terraform code for VPC design on different cloud platforms: AWS &amp; Azure &amp; GCP
 
-## STAGE 1 - Build VPC
+## AWS VPC
 
-Build terraform module for a Three-Tier application on AWS:
  VPC includes:
 - 3 private 
 - 3 public 
-Public subnets should have IGW (Internet Gateway) attached to it. 
-Private subnets should have NAT  (NAT Gateway) attached to it. 
-Configure route tables properly. 
+
+Public subnets  have IGW (Internet Gateway) attached to it. 
+Private subnets have NAT  (NAT Gateway) attached to it. 
+
+
+
 
 ### Test: 
 Once private and public subnet created, please create ec2 instance (manually)  on
@@ -38,5 +41,6 @@ reader3.yourdomain.com
 
 The end result is, hosting a wordpress that creates VPC/ASG/RDS. We should be
 able to run terraform apply, and all the components should be available right away
+
 
 
